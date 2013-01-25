@@ -14,18 +14,13 @@
 -export([code_change/3]).
 -export([stop/0, terminate/2]).
 
-% TODO: If unnamed server, remove definition below.
 -define(SERVER, ?MODULE).
-%%%.
-%%%'   PUBLIC API
 
-%% @doc starts gen_server implementation and caller links to the process too.
 -spec start_link() -> {ok, Pid} | ignore | {error, Error}
   when
       Pid :: pid(),
       Error :: {already_started, Pid} | term().
 start_link() ->
-  % TODO: decide whether to name gen_server callback implementation or not.
   % gen_server:start_link(?MODULE, [], []). % for unnamed gen_server
   gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
@@ -34,12 +29,9 @@ start_link() ->
 stop() ->
   gen_server:cast(?SERVER, stop).
 
-% TODO: add more public API here...
-
-%%%.
-%%%'   CALLBACKS
 %% @callback gen_server
 init(State) ->
+  process_flag(trap_exit, true),
   {ok, State}.
 
 %% @callback gen_server

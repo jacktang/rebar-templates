@@ -11,6 +11,10 @@
 -export([init/1]).
 
 -define(SERVER, ?MODULE).
+
+%%% CHILD HELPER
+-define(CHILD(I, Type), {I, {I, start_link, []}, permanent, 5000, Type, [I]}).
+
 %%%.
 %%%'   PUBLIC API
 start_link() ->

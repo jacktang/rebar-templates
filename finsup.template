@@ -1,9 +1,9 @@
 {variables, [
   {name, "supname"}, 
   {app_dir, "."},
-  {copyright_year, "2011"},
-  {author_name, "Susan Potter"},
-  {author_email,"me@susanpotter.net"}
+  {copyright_year, "2012"},
+  {author_name, "cybergrind"},
+  {author_email,"cybergrind@gmail.com"}
 ]}.
 {dir, "{{app_dir}}/src"}.
 {template, "finsup.erl", "{{app_dir}}/src/{{name}}_sup.erl"}.
