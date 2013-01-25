@@ -24,35 +24,28 @@ start_link() ->
   % gen_server:start_link(?MODULE, [], []). % for unnamed gen_server
   gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
-%% @doc stops gen_server implementation process
 -spec stop() -> ok.
 stop() ->
   gen_server:cast(?SERVER, stop).
 
-%% @callback gen_server
 init(State) ->
   process_flag(trap_exit, true),
   {ok, State}.
 
-%% @callback gen_server
 handle_call(_Req, _From, State) ->
   {reply, State}.
 
-%% @callback gen_server
 handle_cast(stop, State) ->
   {stop, normal, State};
 handle_cast(_Req, State) ->
   {noreply, State}.
 
-%% @callback gen_server
 handle_info(_Info, State) -> 
   {noreply, State}.
 
-%% @callback gen_server
 code_change(_OldVsn, State, _Extra) ->
   {ok, State}.
 
-%% @callback gen_server
 terminate(normal, _State) ->
   ok;
 terminate(shutdown, _State) ->
@@ -61,10 +54,3 @@ terminate({shutdown, _Reason}, _State) ->
   ok;
 terminate(_Reason, _State) ->
   ok.
-
-%%%.
-%%%'   PRIVATE FUNCTIONS
-% TODO: Add private helper functions here.
-
-%%%.
-%%% vim: set filetype=erlang tabstop=2 foldmarker=%%%',%%%. foldmethod=marker:
