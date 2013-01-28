@@ -15,15 +15,8 @@
 %%% CHILD HELPER
 -define(CHILD(I, Type), {I, {I, start_link, []}, permanent, 5000, Type, [I]}).
 
-%%%.
-%%%'   PUBLIC API
 start_link() ->
   supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
-%%%.
-%%%'   CALLBACKS
 init([]) ->
   {ok, { {one_for_one, 5, 10}, []} }.
-
-%%%.
-%%% vim: set filetype=erlang tabstop=2 foldmarker=%%%',%%%. foldmethod=marker:
