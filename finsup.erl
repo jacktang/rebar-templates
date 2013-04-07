@@ -1,9 +1,3 @@
-%%%'   HEADER
-%%% @author {{author_name}} <{{author_email}}> 
-%%% @since {{date}}
-%%% @copyright {{copyright_year}} {{author_name}}
-%%% @doc {{description}}
-%%% @end
 -module({{name}}_sup).
 
 -behaviour(supervisor).
@@ -12,7 +6,6 @@
 
 -define(SERVER, ?MODULE).
 
-%%% CHILD HELPER
 -define(CHILD(I, Type), {I, {I, start_link, []}, permanent, 5000, Type, [I]}).
 
 start_link() ->

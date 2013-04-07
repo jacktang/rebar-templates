@@ -1,9 +1,3 @@
-%%%'   HEADER
-%%% @author {{author_name}} <{{author_email}}>
-%%% @copyright {{copyright_year}} {{author_name}}
-%%% @doc gen_server callback module implementation:
-%%% {{description}}
-%%% @end
 -module({{name}}_srv).
 -author('{{author_name}} <{{author_email}}>').
 
@@ -32,15 +26,18 @@ init(State) ->
   process_flag(trap_exit, true),
   {ok, State}.
 
-handle_call(_Req, _From, State) ->
+handle_call(Req, _From, State) ->
+  lager:debug("Unhandled call ~p~n", [Req]),
   {reply, State}.
 
 handle_cast(stop, State) ->
   {stop, normal, State};
-handle_cast(_Req, State) ->
+handle_cast(Req, State) ->
+  lager:debug("Unhandled cast: ~p~n", [Req]),
   {noreply, State}.
 
-handle_info(_Info, State) -> 
+handle_info(Info, State) ->
+  lager:debug("Unhandled info: ~p~n", [Info]),
   {noreply, State}.
 
 code_change(_OldVsn, State, _Extra) ->
