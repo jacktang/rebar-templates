@@ -1,6 +1,6 @@
 {variables, [
   {name, "myserver"},
-  {copyright_year, "2012"},
-  {author_name, "cybergrind"},
-  {author_email, "cybergrind@gmail.com"}]}.
+  {copyright_year, "2014"},
+  {author_name, "Kirill Pinchuk"},
+  {author_email, "k_pinchuk@wargaming.net"}]}.
 {template, "finsrv.erl", "src/{{name}}_srv.erl"}.
