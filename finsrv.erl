@@ -27,17 +27,17 @@ init(State) ->
   {ok, State}.
 
 handle_call(Req, _From, State) ->
-  lager:debug("Unhandled call ~p~n", [Req]),
+  lager:warning("Unhandled call ~p~n", [Req]),
   {reply, State}.
 
 handle_cast(stop, State) ->
   {stop, normal, State};
 handle_cast(Req, State) ->
-  lager:debug("Unhandled cast: ~p~n", [Req]),
+  lager:warning("Unhandled cast: ~p~n", [Req]),
   {noreply, State}.
 
 handle_info(Info, State) ->
-  lager:debug("Unhandled info: ~p~n", [Info]),
+  lager:warning("Unhandled info: ~p~n", [Info]),
   {noreply, State}.
 
 code_change(_OldVsn, State, _Extra) ->
