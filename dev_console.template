@@ -7,5 +7,6 @@
   {start_services,  "-s lager -s mnesia -s reloader -s APP"}
 ]}.
 
-{dir, "ebin"}.
+{dir,  "ebin"}.
 {template, "dev_console.sh", "ebin/dev_console.sh"}.
+{chmod, 8#744, "ebin/dev_console.sh"}.
