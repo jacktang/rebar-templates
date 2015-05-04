@@ -2,7 +2,7 @@ h1. {{name}}
 
 {{description}}
 
-h2. Author(s)
+h2. Contributor(s)
 
 * {{author_name}} <{{author_email}}>
 

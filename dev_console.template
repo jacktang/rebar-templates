@@ -1,11 +1,11 @@
 {variables, [
-  {name_option,    "-name dev@localhost"}
+  {name_option,    "-name dev@localhost"},
   {erl_vm_flags,   "+S 4 +P 2000000 +pc unicode"},
-  {env_var,        "-env ERL_MAX_ETS_TABLES 200000 -env ERL_MAX_PORTS 200000"},
+  {env_vars,        "-env ERL_MAX_ETS_TABLES 200000 -env ERL_MAX_PORTS 200000"},
   {config_files,   "-config app.config"},
   {mnesia_options,  "-mnesia dir mnesia -mnesia auto_repair true"},
   {start_services,  "-s lager -s mnesia -s reloader -s APP"}
 ]}.
 
 {dir, "ebin"}.
-{template, "dev_console", "ebin/dev_console.erl"}.
+{template, "dev_console.sh", "ebin/dev_console.sh"}.

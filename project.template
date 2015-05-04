@@ -1,18 +1,28 @@
 {variables, [
-  {name, "myproject"}, 
-  {copyright_year, "2011"},
-  {author_name, "Susan Potter"},
-  {author_email,"me@susanpotter.net"},
+  {name, "myproject"},
+  {copyright_year, "2015"},
+  {author_name, "Rebar Template"},
+  {author_email,"me@example.com"},
   {description, "Fill in description of project here."}
 ]}.
-{dir, "deps"}.
-{dir, "src"}.
-{dir, "ebin"}.
-{dir, "include"}.
-{dir, "test"}.
-{dir, "priv"}.
-{template, "project_README", "README"}.
-{file, "project_rebar.config", "rebar.config"}.
-{file, "project_Emakefile", "Emakefile"}.
-{file, "project_Makefile", "Makefile"}.
-{file, "project_gitignore", ".gitignore"}.
+{dir, "{{name}}"}.
+{dir, "{{name}}/deps"}.
+{dir, "{{name}}/src"}.
+{dir, "{{name}}/ebin"}.
+{dir, "{{name}}/include"}.
+{dir, "{{name}}/test"}.
+{dir, "{{name}}/priv"}.
+{dir, "{{name}}/log"}.
+{template, "project_README",   "{{name}}/README"}.
+{file, "project_CHANGELOG",    "{{name}}/CHANGELOG"}.
+{file, "project_rebar.config", "{{name}}/rebar.config"}.
+{file, "project_app.config",   "{{name}}/app.config"}.
+{file, "project_Emakefile",    "{{name}}/Emakefile"}.
+{file, "project_Makefile",     "{{name}}/Makefile"}.
+{file, "project_gitignore",    "{{name}}/.gitignore"}.
+
+{cwd, "{{name}}"}.
+{cmd, "git init"}.
+{cmd, "wget https://github.com/rebar/rebar/releases/download/2.5.1/rebar"}.
+{cmd, "chmod +x ./rebar;"}.
+{cmd, "./rebar get-deps"}.
