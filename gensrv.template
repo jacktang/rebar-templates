@@ -1,0 +1,8 @@
+{variables, [
+  {name, "stdsrv"},
+  {copyright_year, "2015"},
+  {author_name, "Rebar Template"},
+  {author_email, "me@example.com"}
+ ]}.
+
+{template, "gensrv.erl", "src/{{name}}.erl"}.
