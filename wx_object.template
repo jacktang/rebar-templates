@@ -1,0 +1,8 @@
+{variables, [
+  {'name',  "my_widget"},
+  {'author_name',   "Rebar Template"},
+  {'author_email',  "me@example.com"}
+]}.
+
+{dir, "src"}.
+{template, "wx_object.erl",    "src/{{name}}.erl"}.
