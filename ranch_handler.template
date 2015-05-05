@@ -1,0 +1,8 @@
+{variables, [
+  {'handler_name', "my_ranch_handler"},
+  {'author_name', "Rebar Template"},
+  {'author_email',"me@example.com"}
+]}.
+
+{dir, "src"}.
+{template, "ranch_handler.erl", "src/{{handler_name}}.erl"}.
