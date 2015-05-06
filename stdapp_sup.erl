@@ -6,7 +6,7 @@
 %%% @end
 %%% Created :  5 May 2015 by {{author_name}} <{{author_email}}>
 %%%-------------------------------------------------------------------
--module('{{appname}}_sup').
+-module('{{appid}}_sup').
 
 -behaviour(supervisor).
 

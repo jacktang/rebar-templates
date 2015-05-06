@@ -1,5 +1,5 @@
 %%-*- mode: erlang -*-
-{application, '{{appname}}',
+{application, '{{appid}}',
  [ {description, "{{description}}"},
    {vsn, "0.1.0"},
    {registered, []},
@@ -7,7 +7,7 @@
                    kernel,
                    stdlib
                   ]},
-   {mod, { '{{name}}_app', []}},
+   {mod, { '{{appid}}_app', []}},
    {env, []}
   ]}.
 

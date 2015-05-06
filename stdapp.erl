@@ -6,7 +6,7 @@
 %%% @end
 %%% Created :  5 May 2015 by {{author_name}} <{{author_email}}>
 %%%-------------------------------------------------------------------
--module('{{appname}}').
+-module('{{appid}}').
 
 %% API
 -export([start/0]).
@@ -21,7 +21,7 @@
 %% @end
 %%--------------------------------------------------------------------
 start() ->
-    application:start('{{appname}}')
+    application:start('{{appid}}')
 
 %%%===================================================================
 %%% Internal functions

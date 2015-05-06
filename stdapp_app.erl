@@ -6,7 +6,7 @@
 %%% @end
 %%% Created :  5 May 2015 by {{author_name}} <{{author_email}}>
 %%%-------------------------------------------------------------------
--module('{{appname}}_app').
+-module('{{appid}}_app').
 
 -behaviour(application).
 
@@ -34,12 +34,7 @@
 %% @end
 %%--------------------------------------------------------------------
 start(_StartType, _StartArgs) ->
-    case '{{appname}}_sup':start_link() of
-        {ok, Pid} ->
-            {ok, Pid};
-        Error ->
-            Error
-    end.
+    '{{appid}}_sup':start_link().
 
 %%--------------------------------------------------------------------
 %% @private
