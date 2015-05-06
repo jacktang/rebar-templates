@@ -1,30 +1,31 @@
 {variables, [
-  {name, "myproject"},
+  {projectid, "myproject"},
   {copyright_year, "2015"},
   {author_name, "Rebar Template"},
   {author_email,"me@example.com"},
-  {description, "Fill in description of project here."}
+  {description, "Fill in description of project here."},
+  {basedir, "."}
 ]}.
-{dir, "{{name}}"}.
-{dir, "{{name}}/deps"}.
-{dir, "{{name}}/src"}.
-{dir, "{{name}}/ebin"}.
-{dir, "{{name}}/include"}.
-{dir, "{{name}}/test"}.
-{dir, "{{name}}/priv"}.
-{dir, "{{name}}/log"}.
-{template, "project_README",   "{{name}}/README"}.
-{file, "project_CHANGELOG",    "{{name}}/CHANGELOG"}.
-{file, "project_rebar.config", "{{name}}/rebar.config"}.
-{file, "project_app.config",   "{{name}}/app.config"}.
-{file, "project_Emakefile",    "{{name}}/Emakefile"}.
-{file, "project_Makefile",     "{{name}}/Makefile"}.
-{file, "project_gitignore",    "{{name}}/.gitignore"}.
-{file, "project_codestyle.md", "{{name}}/codestyle.md"}.
+{dir, "{{basedir}}/{{projectid}}"}.
+{dir, "{{basedir}}/{{projectid}}/deps"}.
+{dir, "{{basedir}}/{{projectid}}/src"}.
+{dir, "{{basedir}}/{{projectid}}/ebin"}.
+{dir, "{{basedir}}/{{projectid}}/include"}.
+{dir, "{{basedir}}/{{projectid}}/test"}.
+{dir, "{{basedir}}/{{projectid}}/priv"}.
+{dir, "{{basedir}}/{{projectid}}/log"}.
+{template, "project_README",   "{{basedir}}/{{projectid}}/README"}.
+{file, "project_CHANGELOG",    "{{basedir}}/{{projectid}}/CHANGELOG"}.
+{file, "project_rebar.config", "{{basedir}}/{{projectid}}/rebar.config"}.
+{file, "project_app.config",   "{{basedir}}/{{projectid}}/app.config"}.
+{file, "project_Emakefile",    "{{basedir}}/{{projectid}}/Emakefile"}.
+{file, "project_Makefile",     "{{basedir}}/{{projectid}}/Makefile"}.
+{file, "project_gitignore",    "{{basedir}}/{{projectid}}/.gitignore"}.
+{file, "project_codestyle.md", "{{basedir}}/{{projectid}}/codestyle.md"}.
 
-{cwd, "{{name}}"}.
+{cwd, "{{basedir}}/{{projectid}}"}.
 {cmd, "git init"}.
 {cmd, "wget https://github.com/rebar/rebar/releases/download/2.5.1/rebar"}.
 {cmd, "chmod +x ./rebar;"}.
 {cmd, "./rebar get-deps"}.
-{cmd, "./rebar create template=stdapp appname={{appname}}"}
+%{cmd, "./rebar create template=stdapp appname={{appname}}"}
