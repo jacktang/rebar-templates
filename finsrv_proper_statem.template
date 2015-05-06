@@ -1,6 +1,0 @@
-{variables, [
-  {name, "myserver"},
-  {copyright_year, "2011"},
-  {author_name, "Susan Potter"},
-  {author_email, "me@susanpotter.net"}]}.
-{template, "finsrv_proper_statem.erl", "test/{{name}}_srv_asm.erl"}.
