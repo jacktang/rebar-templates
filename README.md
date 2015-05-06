@@ -1,32 +1,35 @@
-# Echo Rebar Templates #
+# Rebar Templates #
 
 ## How to use templates ##
 
 To make the templates available, you need to clone the repo to your
 `~/.rebar/templates` directory:
 
-    mkdir -p ~/.rebar/templates
-    git clone git://github.com:EchoTeam/rebar-templates.git ~/.rebar/templates
-    
-## Creating Erlang/OTP service layout
+    git clone git://github.com:jacktang/rebar-templates.git
+    ln -s /path/to/rebar-templates ~/.rebar/templates
 
-If you want to create a new directory layout for your new service you can do the following:
+## Templates
 
-    $ mkdir <service_name>
-    $ cd <service_name>
-    $ rebar create template=service name=<service_name> description="Describe your service here."
-    $ ./run.me.first.sh
+### Rebar project
 
-Note: You need rebar installed in your system, or placed in `<service_name>` directory.
+   $ ./rebar create template=project name=kickstart
 
-This will generate the initial framework of an Erlang service that supports
-Erlang/OTP releases.
+### OTP standard application
 
-Now you can run your new service:
+   $ cd kickstart
+   $ rebar create template=stdapp appid=<app_name>
+   $ rebar create template=gensrv srvid=<srv_name>
 
-    $ make run
-    
-The service layout is compatible with [service-packager](https://github.com/EchoTeam/service-packager).
+### Cowboy application and handlers
+
+   $ cd kickstart
+   $ rebar create template=cowboy_app appid=<app_name>
+   $ rebar create template=cowboy_handler handlerid=chat handlertype=websocket
+
+
+### Wx-widget
+
+   $ rebar create template=wx_object widgetid=button_ext
 
 Requirements: erlang, git
 

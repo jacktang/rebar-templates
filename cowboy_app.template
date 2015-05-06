@@ -15,5 +15,3 @@
  {template, "cowboy_{{handlertype}}.erl", "{{appdir}}/src/{{handlerid}}_{{handlertype}}.erl"}}.
 {'case', handlertype, ["static", "eventsource", "websocket"],
  {file, "cowboy_{{handlertype}}_index.html", "{{appdir}}/priv/index.html"}}.
-{'case', handlertype, ["websocket"],
- {file, "cowboy_jquery.min.js", "{{appdir}}/priv/static/jquery.min.js"}}.
