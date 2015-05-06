@@ -12,7 +12,7 @@ To make the templates available, you need to clone the repo to your
 
 ### Rebar project
 ```
-   $ ./rebar create template=project name=kickstart
+   $ ./rebar create template=project projectid=kickstart
 ```
 
 ### OTP standard application
