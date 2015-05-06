@@ -1,6 +1,6 @@
 {variables, [
              {appid, "cowboy"},
-             {description, "Cowboy application."}
+             {description, "Cowboy application."},
              {handlerid, "index"},
              {handlertype, "http"},
              {appdir, "."}

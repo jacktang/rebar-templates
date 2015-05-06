@@ -1,6 +1,6 @@
 {variables, [
   {handlerid,   "my_handler"},
-  {handlertype, "http"}
+  {handlertype, "http"},
   {author_name,   "Rebar Template"},
   {author_email,  "me@example.com"},
   {appdir, "."}
