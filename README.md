@@ -1,5 +1,7 @@
 # Rebar Templates #
 
+Rebar provides rails generator like facility, and Rebar-Templates give Erlang developers more templates and workflow.
+
 ## How to use templates ##
 
 To make the templates available, you need to clone the repo to your
