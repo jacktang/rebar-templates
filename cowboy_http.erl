@@ -6,7 +6,7 @@
 %%% @end
 %%% Created : 28 Apr 2015 by {{author_name}} <{{author_email}}>
 %%%-------------------------------------------------------------------
--module('{{handler_name}}').
+-module('{{handlerid}}_http').
 
 -export([init/2]).
 

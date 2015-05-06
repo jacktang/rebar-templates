@@ -1,8 +1,0 @@
-{variables, [
-  {'handler_name',  "my_http_handler"},
-  {'author_name',   "Rebar Template"},
-  {'author_email',  "me@example.com"}
-]}.
-
-{dir, "src"}.
-{template, "cowboy_http.erl",    "src/{{handler_name}}.erl"}.

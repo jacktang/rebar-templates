@@ -1,0 +1,19 @@
+{variables, [
+             {appid, "cowboy"},
+             {description, "Cowboy application."}
+             {handlerid, "index"},
+             {handlertype, "http"},
+             {appdir, "."}
+            ]}.
+
+{dir, "{{appdir}}/src"}.
+{template, "cowboy.app.src",    "{{appdir}}/src/{{appid}}.app.src"}.
+{template, "stdapp.erl",        "{{appdir}}/src/{{appid}.erl}"}.
+{template, "cowboy_app.erl", "{{appdir}}/src/{{appid}}_app.erl"}.
+{template, "stdapp_sup.erl", "{{appdir}}/src/{{appid}}_sup.erl"}.
+{'case', handlertype, ["http", "rest", "eventsource", "websocket"],
+ {template, "cowboy_{{handlertype}}.erl", "{{appdir}}/src/{{handlerid}}_{{handlertype}}.erl"}}.
+{'case', handlertype, ["static", "eventsource", "websocket"],
+ {file, "cowboy_{{handlertype}}_index.html", "{{appdir}}/priv/index.html"}}.
+{'case', handlertype, ["websocket"],
+ {file, "cowboy_jquery.min.js", "{{appdir}}/priv/static/jquery.min.js"}}.

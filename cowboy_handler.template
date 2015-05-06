@@ -1,0 +1,11 @@
+{variables, [
+  {handlerid,   "my_handler"},
+  {handlertype, "http"}
+  {author_name,   "Rebar Template"},
+  {author_email,  "me@example.com"},
+  {appdir, "."}
+]}.
+
+{dir, "{{appdir}}/src"}.
+{'case', handlertype, ["http", "rest", "eventsource", "websocket"],
+ {template, "cowboy_{{handlertype}}.erl",    "{{appdir}}/src/{{handlerid}}_{{handlertype}}.erl"}}.
