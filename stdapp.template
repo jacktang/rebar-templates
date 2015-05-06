@@ -2,13 +2,14 @@
              {appid, "stdapp"},
              {description, "One standard OTP application"},
              {copyright_year, "2015"},
-             {author_name, "Rebar Template"},
+             {copyright_owner, "Rebar Templator"},
+             {author_name, "Rebar Templator"},
              {author_email,"me@example.com"},
-             {appdir, "."}
+             {basedir, "."}
             ]}.
 
-{dir, "{{appdir}}/src"}.
-{template, "stdapp.app.src", "{{appdir}}/src/{{appid}}.app.src"}.
-{template, "stdapp.erl",     "{{appdir}}/src/{{appid}}.erl"}.
-{template, "stdapp_app.erl", "{{appdir}}/src/{{appid}}_app.erl"}.
-{template, "stdapp_sup.erl", "{{appdir}}/src/{{appid}}_sup.erl"}.
+{dir, "{{basedir}}/src"}.
+{template, "stdapp.app.src", "{{basedir}}/src/{{appid}}.app.src"}.
+{template, "stdapp.erl",     "{{basedir}}/src/{{appid}}.erl"}.
+{template, "stdapp_app.erl", "{{basedir}}/src/{{appid}}_app.erl"}.
+{template, "stdapp_sup.erl", "{{basedir}}/src/{{appid}}_sup.erl"}.

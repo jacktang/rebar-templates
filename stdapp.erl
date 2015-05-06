@@ -1,10 +1,10 @@
 %%%-------------------------------------------------------------------
 %%% @author {{author_name}} <{{author_email}}>
-%%% @copyright (C) 2015, {{author_name}}
+%%% @copyright (C) {{copyright_year}}, {{copyright_owner}}
 %%% @doc
 %%%
 %%% @end
-%%% Created :  5 May 2015 by {{author_name}} <{{author_email}}>
+%%% Created :  {{created_at}} by {{author_name}} <{{author_email}}>
 %%%-------------------------------------------------------------------
 -module('{{appid}}').
 
