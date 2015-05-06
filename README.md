@@ -11,25 +11,28 @@ To make the templates available, you need to clone the repo to your
 ## Templates
 
 ### Rebar project
-
+```
    $ ./rebar create template=project name=kickstart
+```
 
 ### OTP standard application
-
+```
    $ cd kickstart
    $ rebar create template=stdapp appid=<app_name>
    $ rebar create template=gensrv srvid=<srv_name>
+```
 
 ### Cowboy application and handlers
-
+```
    $ cd kickstart
    $ rebar create template=cowboy_app appid=<app_name>
    $ rebar create template=cowboy_handler handlerid=chat handlertype=websocket
-
+```
 
 ### Wx-widget
-
+```
    $ rebar create template=wx_object widgetid=button_ext
+```
 
 Requirements: erlang, git
 
