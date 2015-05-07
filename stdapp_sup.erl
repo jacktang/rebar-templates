@@ -4,7 +4,7 @@
 %%% @doc
 %%%
 %%% @end
-%%% Created :  {{created_at}} by {{author_name}} <{{author_email}}>
+%%% Created :  {{now_ts}} by {{author_name}} <{{author_email}}>
 %%%-------------------------------------------------------------------
 -module('{{appid}}_sup').
 
