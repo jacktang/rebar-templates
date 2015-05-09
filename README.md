@@ -47,7 +47,8 @@ To make the templates available, you need to clone the repo to your
 
 ### Console with hot-load in developement mode
 
-Edit `template_vars` in rebar.config and execute below command
+Edit `template_vars` in rebar.config and execute below command.
+NOTE: rebar should be built from [the branch](https://github.com/jacktang/rebar/tree/ext-template)
 ```
   $ rebar create template=dev_console
 ```
