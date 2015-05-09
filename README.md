@@ -45,6 +45,13 @@ To make the templates available, you need to clone the repo to your
   $ rebar create template=test testmod=<module_name> test=spec
 ```
 
+### Console with hot-load in developement mode
+
+Edit `template_vars` in rebar.config and execute below command
+```
+  $ rebar create template=dev_console
+```
+
 Requirements: Erlang, Git
 
 
