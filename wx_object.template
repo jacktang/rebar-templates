@@ -1,8 +1,17 @@
 {variables, [
-  {'name',  "my_widget"},
-  {'author_name',   "Rebar Template"},
-  {'author_email',  "me@example.com"}
-]}.
+             {widgetid,  "my_widget"},
+             {author_name,   "Rebar Template"},
+             {author_email,  "me@example.com"},
+             {test, eunit},
+             {basedir, "."}
+            ]}.
 
-{dir, "src"}.
-{template, "wx_object.erl",    "src/{{name}}.erl"}.
+{dir, "{{basedir}}/src"}.
+{template, "wx_object.erl",    "{{basedir}}/src/wx_{{widgetid}}.erl"}.
+
+{'case', test, [ct, common_test],
+ {template, "ctsuite.erl", "{{basedir}}/test/wx_{{widgetid}}_test.erl"}}.
+{'case', test, [eunit],
+ {template, "eunit.erl",   "{{basedir}}/test/wx_{{widgetid}}_tests.erl"}}.
+{'case', test, [espec],
+ {template, "espec.erl",   "{{basedir}}/spec/wx_{{widgetid}}_spec.erl"}}.
