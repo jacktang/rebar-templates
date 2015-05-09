@@ -1,8 +1,18 @@
 {variables, [
-  {name, "stdsrv"},
-  {copyright_year, "2015"},
-  {author_name, "Rebar Template"},
-  {author_email, "me@example.com"}
- ]}.
+             {srvid, "mysrv"},
+             {copyright_year,  "2015"},
+             {copyright_owner, "Rebar Templater"},
+             {author_name, "Rebar Templater"},
+             {author_email, "me@example.com"},
+             {basedir, "."}
+            ]}.
 
-{template, "gensrv.erl", "src/{{name}}.erl"}.
+{dir, "{{basedir}}/src"}.
+{template, "gensrv.erl", "{{basedir}}/src/{{srvid}}.erl"}.
+
+{'case', test, [ct, common_test],
+ {template, "ctsuite.erl", "{{basedir}}/test/{{srvid}}_test.erl"}}.
+{'case', test, [eunit],
+ {template, "eunit.erl",   "{{basedir}}/test/{{srvid}}_tests.erl"}}.
+{'case', test, [espec],
+ {template, "espec.erl",   "{{basedir}}/spec/{{srvid}}_spec.erl"}}.
