@@ -22,6 +22,8 @@ To make the templates available, you need to clone the repo to your
    $ cd kickstart
    $ rebar create template=stdapp appid=<app_name>
    $ rebar create template=gensrv srvid=<srv_name>
+   $ rebar create template=genfsm fmsid=<fsn_name>
+   $ rebar create template=genevent eventid=<event_name>
 ```
 
 ### Cowboy application and handlers
@@ -36,7 +38,14 @@ To make the templates available, you need to clone the repo to your
    $ rebar create template=wx_object widgetid=button_ext
 ```
 
-Requirements: erlang, git
+### Test-driven skeleton? Of course! And generate test case only like below
+```
+  $ rebar create template=test testmod=<module_name> test=ct
+  $ rebar create template=test testmod=<module_name> test=eunit
+  $ rebar create template=test testmod=<module_name> test=spec
+```
+
+Requirements: Erlang, Git
 
 
 See more info on the service layout:
