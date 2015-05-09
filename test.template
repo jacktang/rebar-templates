@@ -1,25 +1,25 @@
 {variables, [
              {testmod, "testmod"},
              {copyright_year, "2011"},
-             {copyright_owner, "Rebar Templater"}
+             {copyright_owner, "Rebar Templater"},
              {author_name, "Rebar Templater"},
-             {author_email,"me@susanpotter.net"},
+             {author_email,"me@example.com"},
              {test, eunit},
              {basedir, "."}
             ]}.
 
 
-{'case', test, [ct, common_test],
+{'case', test, [ct, common_test, "ct", "common_test"],
  [{dir, "{{basedir}}/test"},
   {template, "ctsuite.erl", "{{basedir}}/test/{{testmod}}_SUITE.erl"}
  ]}.
 
-{'case', test, [eunit],
+{'case', test, [eunit, "eunit"],
  [{dir, "{{basedir}}/test"},
   {template, "eunit.erl",   "{{basedir}}/test/{{testmod}}_tests.erl"}
  ]}.
 
-{'case', test, [espec],
+{'case', test, [espec, "espec", "spec"],
  [{dir, "{{basedir}}/spec"},
   {template, "espec.erl",   "{{basedir}}/spec/{{testmod}}_spec.erl"}
  ]}.
