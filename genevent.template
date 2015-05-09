@@ -1,0 +1,19 @@
+{variables, [
+             {eventid, "myevent"},
+             {copyright_year,  "2015"},
+             {copyright_owner, "Rebar Templator"},
+             {author_name, "Rebar Templator"},
+             {author_email, "me@example.com"},
+             {test, eunit},
+             {basedir, "."}
+            ]}.
+
+{dir, "{{basedir}}/src"}.
+{template, "genevent.erl", "{{basedir}}/src/{{eventid}}.erl"}.
+
+{'case', test, [ct, common_test],
+ {template, "ctsuite.erl", "{{basedir}}/test/{{eventid}}_test.erl"}}.
+{'case', test, [eunit],
+ {template, "eunit.erl",   "{{basedir}}/test/{{eventid}}_tests.erl"}}.
+{'case', test, [espec],
+ {template, "espec.erl",   "{{basedir}}/spec/{{eventid}}_spec.erl"}}.
