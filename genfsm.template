@@ -1,0 +1,19 @@
+{variables, [
+             {fsmid, "myfsm"},
+             {copyright_year,  "2015"},
+             {copyright_owner, "Rebar Templater"},
+             {author_name, "Rebar Templater"},
+             {author_email, "me@example.com"},
+             {basedir, "."}
+            ]}.
+
+{dir, "{{basedir}}/src"}.
+{dir, "{{basedir}}/test"}.
+{template, "genfsm.erl", "{{basedir}}/src/{{fsmid}}.erl"}.
+
+{'case', test, [ct, common_test],
+ {template, "ctsuite.erl", "{{basedir}}/test/{{fsmid}}_test.erl"}}.
+{'case', test, [eunit],
+ {template, "eunit.erl",   "{{basedir}}/test/{{fsmid}}_tests.erl"}}.
+{'case', test, [espec],
+ {template, "espec.erl",   "{{basedir}}/spec/{{fsmid}}_spec.erl"}}.
