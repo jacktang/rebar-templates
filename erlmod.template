@@ -1,0 +1,20 @@
+{variables, [
+             {modid, "mymod"},
+             {description, "Write some sentences about this module."},
+             {copyright_year, "2015"},
+             {copyright_owner, "Rebar Templater"},
+             {author_name, "Rebar Templater"},
+             {author_email,"me@example.com"},
+             {test, eunit},
+             {basedir, "."}
+            ]}.
+
+{dir, "{{basedir}}/src"}.
+{template, "erlmod.erl",   "{{basedir}}/src/{{modid}}.erl"}.
+
+{'case', test, [ct, common_test],
+ {template, "ctsuite.erl", "{{basedir}}/test/{{modid}}_test.erl"}}.
+{'case', test, [eunit],
+ {template, "eunit.erl",   "{{basedir}}/test/{{modid}}_tests.erl"}}.
+{'case', test, [espec],
+ {template, "espec.erl",   "{{basedir}}/spec/{{modid}}_spec.erl"}}.
