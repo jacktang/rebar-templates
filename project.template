@@ -22,6 +22,7 @@
 {file, "project_Makefile",     "{{basedir}}/{{projectid}}/Makefile"}.
 {file, "project_gitignore",    "{{basedir}}/{{projectid}}/.gitignore"}.
 {file, "project_codestyle.md", "{{basedir}}/{{projectid}}/codestyle.md"}.
+{file, "project_project.vars", "{{basedir}}/{{projectid}}/project.vars"}.
 
 {cwd, "{{basedir}}/{{projectid}}"}.
 {cmd, "git init"}.
