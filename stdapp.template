@@ -2,9 +2,10 @@
              {appid, "stdapp"},
              {description, "One standard OTP application"},
              {copyright_year, "2015"},
-             {copyright_owner, "Rebar Templator"},
-             {author_name, "Rebar Templator"},
+             {copyright_owner, "Rebar Templater"},
+             {author_name, "Rebar Templater"},
              {author_email,"me@example.com"},
+             {test, eunit},
              {basedir, "."}
             ]}.
 
@@ -13,3 +14,11 @@
 {template, "stdapp.erl",     "{{basedir}}/src/{{appid}}.erl"}.
 {template, "stdapp_app.erl", "{{basedir}}/src/{{appid}}_app.erl"}.
 {template, "stdapp_sup.erl", "{{basedir}}/src/{{appid}}_sup.erl"}.
+
+
+{'case', test, [ct, common_test],
+ {template, "ctsuite.erl", "{{basedir}}/test/{{modid}}_test.erl"}}.
+{'case', test, [eunit],
+ {template, "eunit.erl",   "{{basedir}}/test/{{modid}}_tests.erl"}}.
+{'case', test, [espec],
+ {template, "espec.erl",   "{{basedir}}/spec/{{modid}}_spec.erl"}}.
