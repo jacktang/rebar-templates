@@ -54,12 +54,7 @@ start(_StartType, _StartArgs) ->
                                  {env, [{dispatch, Dispatch}]}
                                 ]),
 
-    case '{{appid}}_sup':start_link() of
-        {ok, Pid} ->
-            {ok, Pid};
-        Error ->
-            Error
-    end.
+    '{{appid}}_sup':start_link().
 
 %%--------------------------------------------------------------------
 %% @private
