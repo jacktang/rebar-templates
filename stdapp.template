@@ -1,3 +1,4 @@
+%% Variables
 {variables, [
              {appid, "stdapp"},
              {description, "One standard OTP application"},
@@ -8,17 +9,16 @@
              {test, eunit},
              {basedir, "."}
             ]}.
-
+%% Actions
 {dir, "{{basedir}}/src"}.
 {template, "stdapp.app.src", "{{basedir}}/src/{{appid}}.app.src"}.
 {template, "stdapp.erl",     "{{basedir}}/src/{{appid}}.erl"}.
 {template, "stdapp_app.erl", "{{basedir}}/src/{{appid}}_app.erl"}.
 {template, "stdapp_sup.erl", "{{basedir}}/src/{{appid}}_sup.erl"}.
-
-
-{'case', test, [ct, common_test],
+%% Tests
+{'case', test, [ct, common_test, "ct", "common_test"],
  {template, "ctsuite.erl", "{{basedir}}/test/{{appid}}_SUITE.erl"}}.
-{'case', test, [eunit],
+{'case', test, [eunit, "eunit"],
  {template, "eunit.erl",   "{{basedir}}/test/{{appid}}_tests.erl"}}.
-{'case', test, [espec],
+{'case', test, [espec, "espec", "spec"],
  {template, "espec.erl",   "{{basedir}}/spec/{{appid}}_spec.erl"}}.
