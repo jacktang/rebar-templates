@@ -12,7 +12,7 @@
 {template, "genfsm.erl", "{{basedir}}/src/{{fsmid}}.erl"}.
 
 {'case', test, [ct, common_test],
- {template, "ctsuite.erl", "{{basedir}}/test/{{fsmid}}_test.erl"}}.
+ {template, "ctsuite.erl", "{{basedir}}/test/{{fsmid}}_SUITE.erl"}}.
 {'case', test, [eunit],
  {template, "eunit.erl",   "{{basedir}}/test/{{fsmid}}_tests.erl"}}.
 {'case', test, [espec],

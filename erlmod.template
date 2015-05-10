@@ -13,7 +13,7 @@
 {template, "erlmod.erl",   "{{basedir}}/src/{{modid}}.erl"}.
 
 {'case', test, [ct, common_test],
- {template, "ctsuite.erl", "{{basedir}}/test/{{modid}}_test.erl"}}.
+ {template, "ctsuite.erl", "{{basedir}}/test/{{modid}}_SUITE.erl"}}.
 {'case', test, [eunit],
  {template, "eunit.erl",   "{{basedir}}/test/{{modid}}_tests.erl"}}.
 {'case', test, [espec],

@@ -12,7 +12,7 @@
 {template, "genevent.erl", "{{basedir}}/src/{{eventid}}.erl"}.
 
 {'case', test, [ct, common_test],
- {template, "ctsuite.erl", "{{basedir}}/test/{{eventid}}_test.erl"}}.
+ {template, "ctsuite.erl", "{{basedir}}/test/{{eventid}}_SUITE.erl"}}.
 {'case', test, [eunit],
  {template, "eunit.erl",   "{{basedir}}/test/{{eventid}}_tests.erl"}}.
 {'case', test, [espec],

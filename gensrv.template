@@ -11,7 +11,7 @@
 {template, "gensrv.erl", "{{basedir}}/src/{{srvid}}.erl"}.
 
 {'case', test, [ct, common_test],
- {template, "ctsuite.erl", "{{basedir}}/test/{{srvid}}_test.erl"}}.
+ {template, "ctsuite.erl", "{{basedir}}/test/{{srvid}}_SUITE.erl"}}.
 {'case', test, [eunit],
  {template, "eunit.erl",   "{{basedir}}/test/{{srvid}}_tests.erl"}}.
 {'case', test, [espec],

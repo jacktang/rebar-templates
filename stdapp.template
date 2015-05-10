@@ -17,8 +17,8 @@
 
 
 {'case', test, [ct, common_test],
- {template, "ctsuite.erl", "{{basedir}}/test/{{modid}}_test.erl"}}.
+ {template, "ctsuite.erl", "{{basedir}}/test/{{appid}}_SUITE.erl"}}.
 {'case', test, [eunit],
- {template, "eunit.erl",   "{{basedir}}/test/{{modid}}_tests.erl"}}.
+ {template, "eunit.erl",   "{{basedir}}/test/{{appid}}_tests.erl"}}.
 {'case', test, [espec],
- {template, "espec.erl",   "{{basedir}}/spec/{{modid}}_spec.erl"}}.
+ {template, "espec.erl",   "{{basedir}}/spec/{{appid}}_spec.erl"}}.
