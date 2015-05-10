@@ -4,7 +4,7 @@
 %%% @doc
 %%%
 %%% @end
-%%% Created : 28 Apr 2015 by {{author_name}} <{{author_email}}>
+%%% Created : {{now_ts}} by {{author_name}} <{{author_email}}>
 %%%-------------------------------------------------------------------
 -module('{{handlerid}}_rest').
 
