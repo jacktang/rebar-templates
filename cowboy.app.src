@@ -1,13 +1,13 @@
 %%-*- mode: erlang -*-
 {application, '{{appid}}',
  [ {description, "{{description}}"},
-   {vsn, "0.1.0"},
+   {vsn, git},
    {registered, []},
    {applications, [
                    kernel,
                    stdlib
                   ]},
-   {mod, { '{{name}}_app', []}},
+   {mod, { '{{appid}}_app', []}},
    {env, [{listen_port, 9000},
           {acceptor_num, 100}]}
   ]}.
