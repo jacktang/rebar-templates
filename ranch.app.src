@@ -1,0 +1,14 @@
+%%-*- mode: erlang -*-
+{application, '{{appid}}',
+ [ {description, "{{description}}"},
+   {vsn, git},
+   {registered, []},
+   {applications, [
+                   kernel,
+                   stdlib
+                  ]},
+   {mod, { '{{appid}}_app', []}},
+   {env, [{listen_port, 9000}]}
+  ]}.
+
+%% vim: set filetype=erlang tabstop=4

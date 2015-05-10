@@ -1,0 +1,31 @@
+%% Variables
+{variables, [
+             {appid,     "my_ranch"},
+             {copyright_year, "2015"},
+             {copyright_owner, "Rebar Templater"},
+             {author_name, "Rebar Templater"},
+             {author_email,"me@example.com"},
+             {handlerid, "my_ranch_handler"},
+             {test, eunit},
+             {basedir, "."}
+            ]}.
+%% Actions
+{dir, "{{basedir}}/src"}.
+{template, "stdapp.erl",        "{{basedir}}/src/{{appid}}.erl"}.
+{template, "ranch.app.src",     "{{basedir}}/src/{{appid}}.app.src"}.
+{template, "ranch_app.erl",     "{{basedir}}/src/{{appid}}_app.erl"}.
+{template, "stdapp_sup.erl",    "{{basedir}}/src/{{appid}}_sup.erl"}.
+{template, "ranch_handler.erl", "{{basedir}}/src/{{handlerid}}.erl"}.
+%% Test
+{'case', test, [ct, common_test, "ct", "common_test"],
+ [{template, "ctsuite.erl", "{{basedir}}/test/{{appid}}_SUITE.erl"},
+  {template, "ctsuite.erl", "{{basedir}}/test/{{handlerid}}_SUITE.erl"}
+ ]}.
+{'case', test, [eunit, "eunit"],
+ [{template, "eunit.erl",   "{{basedir}}/test/{{appid}}_tests.erl"},
+  {template, "eunit.erl",   "{{basedir}}/test/{{handlerid}}_tests.erl"}
+ ]}.
+{'case', test, [espec, "espec", "spec"],
+ [{template, "espec.erl",   "{{basedir}}/spec/{{appid}}_spec.erl"},
+  {template, "espec.erl",   "{{basedir}}/spec/{{handlerid}}_spec.erl"}
+ ]}.

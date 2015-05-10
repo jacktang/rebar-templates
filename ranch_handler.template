@@ -1,8 +1,20 @@
+%% Variables
 {variables, [
-  {'handler_name', "my_ranch_handler"},
-  {'author_name', "Rebar Template"},
-  {'author_email',"me@example.com"}
+             {handlerid, "my_ranch_handler"},
+             {copyright_year, "2015"},
+             {copyright_owner, "Rebar Templater"},
+             {author_name, "Rebar Templater"},
+             {author_email,"me@example.com"},
+             {test, eunit},
+             {basedir, "."}
 ]}.
-
+%% Actions
 {dir, "src"}.
 {template, "ranch_handler.erl", "src/{{handler_name}}.erl"}.
+%% Tests
+{'case', test, [ct, common_test, "ct", "common_test"],
+ {template, "ctsuite.erl", "{{basedir}}/test/{{handlerid}}_SUITE.erl"}}.
+{'case', test, [eunit, "eunit"],
+ {template, "eunit.erl",   "{{basedir}}/test/{{handlerid}}_tests.erl"}}.
+{'case', test, [espec, "espec", "spec"],
+ {template, "espec.erl",   "{{basedir}}/spec/{{handlerid}}_spec.erl"}}.
