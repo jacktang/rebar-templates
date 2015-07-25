@@ -1,5 +1,6 @@
 {variables, [
   {name_option,    "-name dev@localhost"},
+  {boot_args,      "-boot start_sasl"},
   {erl_vm_flags,   "+S 4 +P 2000000 +pc unicode"},
   {env_vars,        "-env ERL_MAX_ETS_TABLES 200000 -env ERL_MAX_PORTS 200000"},
   {config_files,   "-config app.config"},
